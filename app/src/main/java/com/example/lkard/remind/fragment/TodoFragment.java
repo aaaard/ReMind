@@ -1,5 +1,6 @@
 package com.example.lkard.remind.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,13 +13,14 @@ import com.example.lkard.remind.R;
 /**
  * Created by LKARD on 17.06.2016.
  */
-public class ExampleFragment extends Fragment{
+public class TodoFragment extends AbstractTabFragment{
     private static final int LAYOUT = R.layout.fragment_example;
-    private View view;
-    public static ExampleFragment getInstance(){
+    public static TodoFragment getInstance(Context context){
         Bundle args = new Bundle();
-        ExampleFragment fragment = new ExampleFragment();
+        TodoFragment fragment = new TodoFragment();
         fragment.setArguments(args);
+        fragment.setContext(context);
+        fragment.setTitle(context.getString(R.string.tab_item_todo));
         return fragment;
     }
     @Nullable
